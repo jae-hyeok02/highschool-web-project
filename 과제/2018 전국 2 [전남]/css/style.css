@@ -1,0 +1,1057 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+
+@font-face {
+	font-family: 'NanumSquareR';
+	src: url('../font/NanumSquareR.ttf');
+}
+@font-face {
+	font-family: 'NanumSquareL';
+	src: url('../font/NanumSquareL.ttf');
+}
+@font-face {
+	font-family: 'NanumSquareB';
+	src: url('../font/NanumSquareB.ttf');
+	font-weight: bold;
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	font-size: 16px;
+	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.rap {
+	max-width: 1820px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.main-img {
+	width: 100%;
+	height: 100vh;
+	background: url("../images/main.jpg") no-repeat 100% / cover fixed;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/* 메인 섹션 시작 */
+/* header 시작 */
+
+.visual {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: url("../images/main.jpg") center 40% / cover;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 110px;
+	color: white;
+	font-family: 'NanumSquareL';
+}
+
+.main {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 2px solid white;
+	padding-bottom: 10px;
+}
+
+#logo {
+	font-size: 37px;
+	line-height: 30px;
+}
+#logo span {
+	color: rgb(4, 164, 233);
+}
+
+.main ul {
+	display: flex;
+	justify-content: space-between;
+	width: 280px;
+	margin-left: -95px;
+	font-size: 20px;
+	font-weight: 100;
+}
+.toggle {
+	position: relative;
+	z-index: 100;
+	display: block;
+	width: 30px;
+	cursor: pointer;
+}
+.toggle .stick,
+.toggle:before,
+.toggle:after {
+	position: relative;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: #fff;
+	content: "";
+	transition: .5s ease;
+}
+.toggle .stick {
+	margin: 7px 0;
+}
+
+#toggle:checked ~ .visual .toggle:before,
+#toggle:checked ~ .visual .toggle:after {
+	background: black;
+}
+#toggle:checked ~ .visual .toggle:before {
+	top: 10px;
+	transform: rotate(-135deg);
+}
+#toggle:checked ~ .visual .toggle:after {
+	top: -10px;
+	transform: rotate(135deg);
+}
+#toggle:checked ~ .visual .toggle .stick {
+	opacity: 0;
+}
+
+.toggle-menu {
+	position: absolute;
+	right: -670px;
+	top: -275px;
+	width: 550px;
+	height: 550px;
+	transform: rotate(45deg);
+	background: rgb(4, 164, 233);
+	transition: .5s ease;
+}
+.toggle-menu-content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	transform: rotate(-45deg);
+}
+.toggle-menu-content ul {
+	position: absolute;
+	left: 15%;
+	bottom: 13%;
+}
+.toggle-menu-content ul li {
+	margin-bottom: 10px;
+	transition: .5s ease;
+	cursor: pointer;
+}
+.toggle-menu-content ul li:hover {
+	color: black;
+}
+.toggle-menu-content ul li:nth-child(2) {
+	margin-left: 30px;
+}
+.toggle-menu-content ul li:nth-child(3) {
+	margin-left: 60px;
+}
+#toggle:checked ~ .visual .toggle-menu {
+	right: -275px;
+}
+
+/* header 끝 */
+
+.typing {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	transform: translateY(-50%);
+	font-family: 'NanumSquareL';
+}
+.typing > span {
+	position: relative;
+	font-size: 50px;
+}
+.typing p {
+	font-size: 50px;
+	color: rgb(4, 164, 233);
+}
+.typing > span:before {
+	content: "ㅇ";
+	color: white;
+	animation: 20s typing linear infinite;
+}
+.typing > span:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 1px;
+	height: 100%;
+	content: "";
+	background: white;
+	animation: cursor 1s steps(1) infinite;
+}
+
+.typing span .underline {
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 46px;
+	background: #fff;
+	animation: 20s underbar steps(1) infinite;
+}
+
+@keyframes cursor {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes underbar {
+	0% {
+		border-bottom: 1px solid white;
+	}
+	20.67% {
+		border: none;
+	}
+	30.21% {
+		border-bottom: 1px solid white;
+	}
+	47.17% {
+		border: none;
+	}
+	55.12% {
+		border-bottom: 1px solid white;
+	}
+	69.96% {
+		border: none;
+	}
+	77.38% {
+		border-bottom: 1px solid white;
+	}
+	92.75% {
+		border: none;
+	}
+}
+
+@keyframes typing {
+	0.53% { content: "ㅇ"; }
+	1.06% { content: "아"; }
+	1.59% { content: "알"; }
+	2.12% { content: "아르"; }
+	2.65% { content: "아름"; }
+	3.18% { content: "아름ㄷ"; }
+	3.71% { content: "아름다"; }
+	4.24% { content: "아름당"; }
+	4.77% { content: "아름다우"; }
+	5.3% { content: "아름다운"; }
+	5.83% { content: "아름다운 "; }
+	6.36% { content: "아름다운 ㅂ"; }
+	6.89% { content: "아름다운 받"; }
+	7.42% { content: "아름다운 바다"; }
+	7.95% { content: "아름다운 바다 "; }
+	8.48% { content: "아름다운 바다 ㅅ"; }
+	9.01% { content: "아름다운 바다 수"; }
+	9.54% { content: "아름다운 바다 숨"; }
+	10.07% { content: "아름다운 바다 숨 "; }
+	10.6% { content: "아름다운 바다 숨 ㅅ"; }
+	11.13% { content: "아름다운 바다 숨 수"; }
+	11.66% { content: "아름다운 바다 숨 쉬"; }
+	12.19% { content: "아름다운 바다 숨 쉰"; }
+	12.72% { content: "아름다운 바다 숨 쉬느"; }
+	13.25% { content: "아름다운 바다 숨 쉬는"; }
+	13.78% { content: "아름다운 바다 숨 쉬는 "; }
+	14.31% { content: "아름다운 바다 숨 쉬는 ㅇ"; }
+	14.84% { content: "아름다운 바다 숨 쉬는 여"; }
+	15.37% { content: "아름다운 바다 숨 쉬는 연"; }
+	15.9% { content: "아름다운 바다 숨 쉬는 연ㅇ"; }
+	16.43% { content: "아름다운 바다 숨 쉬는 연아"; }
+	16.96% { content: "아름다운 바다 숨 쉬는 연안"; }
+	17.49% { content: "아름다운 바다 숨 쉬는 연안 "; }
+	18.02% { content: "아름다운 바다 숨 쉬는 연안 ㅇ"; }
+	18.55% { content: "아름다운 바다 숨 쉬는 연안 여"; }
+	19.08% { content: "아름다운 바다 숨 쉬는 연안 엿"; }
+	19.61% { content: "아름다운 바다 숨 쉬는 연안 여수"; }
+	20.14% { content: "아름다운 바다 숨 쉬는 연안 여수"; }
+	20.67% { content: "아름다운 바다 숨 쉬는 연안 여수"; }
+	21.2% { content: "아름다운 바다 숨 쉬는 연안 여ㅅ"; }
+	21.73% { content: "아름다운 바다 숨 쉬는 연안 여"; }
+	22.26% { content: "아름다운 바다 숨 쉬는 연안 "; }
+	22.79% { content: "아름다운 바다 숨 쉬는 연안"; }
+	23.32% { content: "아름다운 바다 숨 쉬는 연"; }
+	23.85% { content: "아름다운 바다 숨 쉬는 "; }
+	24.38% { content: "아름다운 바다 숨 쉬는"; }
+	24.91% { content: "아름다운 바다 숨 쉬"; }
+	25.44% { content: "아름다운 바다 숨 "; }
+	25.97% { content: "아름다운 바다 숨"; }
+	26.5% { content: "아름다운 바다 "; }
+	27.03% { content: "아름다운 바"; }
+	27.56% { content: "아름다운 "; }
+	28.09% { content: "아름다운"; }
+	28.62% { content: "아름다"; }
+	29.15% { content: "아름"; }
+	29.68% { content: "아"; }
+	30.21% { content: "ㅅ"; }
+	30.74% { content: "새"; }
+	31.27% { content: "생"; }
+	31.8% { content: "생ㅁ"; }
+	32.33% { content: "생며"; }
+	32.86% { content: "생명"; }
+	33.39% { content: "생명ㅇ"; }
+	33.92% { content: "생명으"; }
+	34.45% { content: "생명의"; }
+	34.98% { content: "생명의 "; }
+	35.51% { content: "생명의 ㅍ"; }
+	36.04% { content: "생명의 푸"; }
+	36.57% { content: "생명의 풀"; }
+	37.1% { content: "생명의 푸르"; }
+	37.63% { content: "생명의 푸를"; }
+	38.16% { content: "생명의 푸르르"; }
+	38.69% { content: "생명의 푸르름"; }
+	39.22% { content: "생명의 푸르름 "; }
+	39.75% { content: "생명의 푸르름 ㄱ"; }
+	40.28% { content: "생명의 푸르름 가"; }
+	40.81% { content: "생명의 푸르름 갇"; }
+	41.34% { content: "생명의 푸르름 가드"; }
+	41.87% { content: "생명의 푸르름 가득"; }
+	42.4% { content: "생명의 푸르름 가득ㅎ"; }
+	42.93% { content: "생명의 푸르름 가득하"; }
+	43.46% { content: "생명의 푸르름 가득한"; }
+	43.99% { content: "생명의 푸르름 가득한 "; }
+	44.52% { content: "생명의 푸르름 가득한 ㅇ"; }
+	45.05% { content: "생명의 푸르름 가득한 여"; }
+	45.58% { content: "생명의 푸르름 가득한 엿"; }
+	46.11% { content: "생명의 푸르름 가득한 여수"; }
+	46.64% { content: "생명의 푸르름 가득한 여수"; }
+	47.17% { content: "생명의 푸르름 가득한 여수"; }
+	47.7% { content: "생명의 푸르름 가득한 여ㅅ"; }
+	48.23% { content: "생명의 푸르름 가득한 여"; }
+	48.76% { content: "생명의 푸르름 가득한 "; }
+	49.29% { content: "생명의 푸르름 가득한"; }
+	49.82% { content: "생명의 푸르름 가득"; }
+	50.35% { content: "생명의 푸르름 가"; }
+	50.88% { content: "생명의 푸르름 "; }
+	51.41% { content: "생명의 푸르름"; }
+	51.94% { content: "생명의 푸르"; }
+	52.47% { content: "생명의 푸"; }
+	53% { content: "생명의 "; }
+	53.53% { content: "생명의"; }
+	54.06% { content: "생명"; }
+	54.59% { content: "생"; }
+	55.12% { content: "ㅇ"; }
+	55.65% { content: "이"; }
+	56.18% { content: "일"; }
+	56.71% { content: "일ㅅ"; }
+	57.24% { content: "일사"; }
+	57.77% { content: "일상"; }
+	58.3% { content: "일상ㅇ"; }
+	58.83% { content: "일상에"; }
+	59.36% { content: "일상엣"; }
+	59.89% { content: "일상에서"; }
+	60.42% { content: "일상에서 "; }
+	60.95% { content: "일상에서 ㅅ"; }
+	61.48% { content: "일상에서 수"; }
+	62.01% { content: "일상에서 쉬"; }
+	62.54% { content: "일상에서 쉼"; }
+	63.07% { content: "일상에서 쉼ㅍ"; }
+	63.6% { content: "일상에서 쉼표"; }
+	64.13% { content: "일상에서 쉼표 "; }
+	64.66% { content: "일상에서 쉼표 ㅎ"; }
+	65.19% { content: "일상에서 쉼표 하"; }
+	65.72% { content: "일상에서 쉼표 한"; }
+	66.25% { content: "일상에서 쉼표 하나"; }
+	66.78% { content: "일상에서 쉼표 하나 "; }
+	67.31% { content: "일상에서 쉼표 하나 ㅇ"; }
+	67.84% { content: "일상에서 쉼표 하나 여"; }
+	68.37% { content: "일상에서 쉼표 하나 엿"; }
+	68.9% { content: "일상에서 쉼표 하나 여수"; }
+	69.43% { content: "일상에서 쉼표 하나 여수"; }
+	69.96% { content: "일상에서 쉼표 하나 여수"; }
+	70.49% { content: "일상에서 쉼표 하나 여ㅅ"; }
+	71.02% { content: "일상에서 쉼표 하나 여"; }
+	71.55% { content: "일상에서 쉼표 하나 "; }
+	72.08% { content: "일상에서 쉼표 하나"; }
+	72.61% { content: "일상에서 쉼표 하"; }
+	73.14% { content: "일상에서 쉼표 "; }
+	73.67% { content: "일상에서 쉼표"; }
+	74.2% { content: "일상에서 쉼"; }
+	74.73% { content: "일상에서 "; }
+	75.26% { content: "일상에서"; }
+	75.79% { content: "일상에"; }
+	76.32% { content: "일상"; }
+	76.85% { content: "일"; }
+	77.38% { content: "ㅎ"; }
+	77.91% { content: "호"; }
+	78.44% { content: "화"; }
+	78.97% { content: "활"; }
+	79.5% { content: "활ㄹ"; }
+	80.03% { content: "활려"; }
+	80.56% { content: "활력"; }
+	81.09% { content: "활력 "; }
+	81.62% { content: "활력 ㅇ"; }
+	82.15% { content: "활력 이"; }
+	82.68% { content: "활력 있"; }
+	83.21% { content: "활력 있ㄱ"; }
+	83.74% { content: "활력 있고"; }
+	84.27% { content: "활력 있고 ㅇ"; }
+	84.8% { content: "활력 있고 아"; }
+	85.33% { content: "활력 있고 알"; }
+	85.86% { content: "활력 있고 아르"; }
+	86.39% { content: "활력 있고 아름"; }
+	86.92% { content: "활력 있고 아름ㄷ"; }
+	87.45% { content: "활력 있고 아름다"; }
+	87.98% { content: "활력 있고 아름당"; }
+	88.51% { content: "활력 있고 아름다우"; }
+	89.04% { content: "활력 있고 아름다우"; }
+	89.57% { content: "활력 있고 아름다운 "; }
+	90.1% { content: "활력 있고 아름다운 ㅇ"; }
+	90.63% { content: "활력 있고 아름다운 여"; }
+	91.16% { content: "활력 있고 아름다운 엿"; }
+	91.69% { content: "활력 있고 아름다운 여수"; }
+	92.22% { content: "활력 있고 아름다운 여수"; }
+	92.75% { content: "활력 있고 아름다운 여수"; }
+	93.28% { content: "활력 있고 아름다운 여ㅅ"; }
+	93.81% { content: "활력 있고 아름다운 여"; }
+	94.34% { content: "활력 있고 아름다운 "; }
+	94.87% { content: "활력 있고 아름다운"; }
+	95.4% { content: "활력 있고 아름다"; }
+	95.93% { content: "활력 있고 아름"; }
+	96.46% { content: "활력 있고 아"; }
+	96.99% { content: "활력 있고 "; }
+	97.52% { content: "활력 있고"; }
+	98.05% { content: "활력 있"; }
+	98.58% { content: "활력 "; }
+	99.11% { content: "활력"; }
+	99.64% { content: "활"; }
+}
+
+/* 메인 섹션 끝 */
+/* 슬라이드 섹션 시작 */
+
+.content {
+	font-family: "NanumSquareR";
+	overflow: hidden;
+}
+
+.section1 {
+	text-align: center;
+	padding: 100px 0;
+}
+.section1-title p:nth-child(1) {
+	font-size: 32px;
+	margin-bottom: 30px;
+}
+.section1-title p:nth-child(2) {
+	font-size: 21px;
+}
+
+.slide {
+	width: 100%;
+	height: 100%;
+	background: rgb(222, 249, 253);
+	transition: .4s all;
+}
+
+.slide-pan {
+	position: relative;
+	display: flex;
+	width: 200%;
+	height: 600px;
+	font-family: "NanumSquareL";
+}
+
+.slide-item {
+	position: relative;
+	z-index: 30;
+	width: 10%;
+	height: 600px;
+	transition: .4s all;
+	cursor: pointer;
+}
+.slide-item > img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.slide-item:hover {
+	z-index: 999;
+	transform: scaleX(1.05) scaleY(1.1);
+}
+
+#slide1:checked ~ .content .slide .slide-item {
+	left: 20%;
+}
+#slide2:checked ~ .content .slide .slide-item {
+	left: 10%;
+}
+#slide3:checked ~ .content .slide .slide-item {
+	left: 0%;
+}
+#slide4:checked ~ .content .slide .slide-item {
+	left: -10%;
+}
+#slide5:checked ~ .content .slide .slide-item {
+	left: -20%;
+}
+#slide6:checked ~ .content .slide .slide-item {
+	left: -30%;
+}
+#slide7:checked ~ .content .slide .slide-item {
+	left: -40%;
+}
+#slide8:checked ~ .content .slide .slide-item {
+	left: -50%;
+}
+#slide9:checked ~ .content .slide .slide-item {
+	left: -60%;
+}
+#slide10:checked ~ .content .slide .slide-item {
+	left: -70%;
+}
+
+#slide1:checked ~ .content .slide .slide-item1,
+#slide2:checked ~ .content .slide .slide-item2,
+#slide3:checked ~ .content .slide .slide-item3,
+#slide4:checked ~ .content .slide .slide-item4,
+#slide5:checked ~ .content .slide .slide-item5,
+#slide6:checked ~ .content .slide .slide-item6,
+#slide7:checked ~ .content .slide .slide-item7,
+#slide8:checked ~ .content .slide .slide-item8,
+#slide9:checked ~ .content .slide .slide-item9,
+#slide10:checked ~ .content .slide .slide-item10 {
+	position: relative;
+	z-index: 9999;
+	transform: scaleX(1.1) scaleY(1.2);
+}
+#slide1:checked ~ .content .slide .slide-item1 {
+	left: 20%;
+}
+#slide2:checked ~ .content .slide .slide-item2 {
+	left: 10%;
+}
+#slide3:checked ~ .content .slide .slide-item3 {
+	left: 0%;
+}
+#slide4:checked ~ .content .slide .slide-item4 {
+	left: -10%;
+}
+#slide5:checked ~ .content .slide .slide-item5 {
+	left: -20%;
+}
+#slide6:checked ~ .content .slide .slide-item6 {
+	left: -30%;
+}
+#slide7:checked ~ .content .slide .slide-item7 {
+	left: -40%;
+}
+#slide8:checked ~ .content .slide .slide-item8 {
+	left: -50%;
+}
+#slide9:checked ~ .content .slide .slide-item9 {
+	left: -60%;
+}
+#slide10:checked ~ .content .slide .slide-item10 {
+	left: -70%;
+}
+
+.slide-info {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	padding: 15px 20px;
+	background: rgba(0, 0, 0, .7);
+	color: white;
+	font-size: 24.5px;
+	transition: .4s all;
+	overflow: hidden;
+}
+
+#slide1:checked ~ .content .slide .slide-info1,
+#slide2:checked ~ .content .slide .slide-info2,
+#slide4:checked ~ .content .slide .slide-info4,
+#slide5:checked ~ .content .slide .slide-info5,
+#slide6:checked ~ .content .slide .slide-info6,
+#slide7:checked ~ .content .slide .slide-info7,
+#slide9:checked ~ .content .slide .slide-info9 {
+	height: 180px;
+}
+#slide3:checked ~ .content .slide .slide-info3,
+#slide8:checked ~ .content .slide .slide-info8,
+#slide10:checked ~ .content .slide .slide-info10 {
+	height: 200px;
+}
+
+.slide-des,
+.slide-address {
+	display: block;
+	font-size: 16px;
+	transition: .4s all;
+}
+.slide-des {
+	margin-top: 20px;
+}
+.slide-address {
+	margin-top: 60px;
+}
+
+#slide1:checked ~ .content .slide .slide-info1 .slide-des,
+#slide2:checked ~ .content .slide .slide-info2 .slide-des,
+#slide3:checked ~ .content .slide .slide-info3 .slide-des,
+#slide4:checked ~ .content .slide .slide-info4 .slide-des,
+#slide5:checked ~ .content .slide .slide-info5 .slide-des,
+#slide6:checked ~ .content .slide .slide-info6 .slide-des,
+#slide7:checked ~ .content .slide .slide-info7 .slide-des,
+#slide8:checked ~ .content .slide .slide-info8 .slide-des,
+#slide9:checked ~ .content .slide .slide-info9 .slide-des,
+#slide10:checked ~ .content .slide .slide-info10 .slide-des {
+	color: #bdbdbd;
+	margin-top: 20px;
+}
+#slide1:checked ~ .content .slide .slide-info1 .slide-address,
+#slide2:checked ~ .content .slide .slide-info2 .slide-address,
+#slide3:checked ~ .content .slide .slide-info3 .slide-address,
+#slide4:checked ~ .content .slide .slide-info4 .slide-address,
+#slide5:checked ~ .content .slide .slide-info5 .slide-address,
+#slide6:checked ~ .content .slide .slide-info6 .slide-address,
+#slide7:checked ~ .content .slide .slide-info7 .slide-address,
+#slide8:checked ~ .content .slide .slide-info8 .slide-address,
+#slide9:checked ~ .content .slide .slide-info9 .slide-address,
+#slide10:checked ~ .content .slide .slide-info10 .slide-address {
+	color: #bdbdbd;
+	font-size: 13px;
+}
+
+/* 슬라이드 섹션 끝 */
+/* 이미지 섹션 시작 */
+ 
+.section2 {
+	max-width: 1440px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.section2-title {
+	margin: 70px 0 85px 0;
+}
+.section2-title p:nth-child(1) {
+	color: rgb(51, 199, 208);
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-family: "NanumSquareR";
+}
+.section2-title p:nth-child(2) {
+	font-size: 40px;
+	font-family: "NanumSquareB";
+}
+
+.image {
+	margin-bottom: 35px;
+	padding: 0 5px;
+	overflow: hidden;
+}
+
+.m-l {
+	margin-left: 10px;
+}
+.m-t {
+	position: relative;
+	top: -190px;
+}
+
+.gallery-item {
+	float: left;
+	position: relative;
+}
+.gallery-item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.gallery-item1 {
+	width: 278px;
+	height: 290px;
+}
+.gallery-item2 {
+	width: 350px;
+	height: 290px;
+}
+.gallery-item3 {
+	width: 350px;
+	height: 290px;
+}
+.gallery-item4 {
+	width: 422px;
+	height: 490px;
+}
+.gallery-item5 {
+	width: 278px;
+	height: 190px;
+}
+.gallery-item6 {
+	width: 710px;
+	height: 190px;
+}
+.gallery-item7 {
+	width: 640px;
+	height: 490px;
+}
+.gallery-item8 {
+	width: 780px;
+	height: 240px;
+}
+.gallery-item9 {
+	width: 780px;
+	height: 240px;
+}
+.gallery-item7, .gallery-item8, .gallery-item9 {
+	margin-top: 10px;
+}
+.gallery-item-mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	opacity: 0;
+	transition: .3s all;
+}
+
+.gallery-item-mask button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 110px;
+	height: 40px;
+	background: transparent;
+	color: white;
+	font-size: 18px;
+	border: 1px solid white;
+	transition: .3s all;
+	font-family: "NanumSquareL";
+	cursor: pointer;
+}
+
+.gallery-item:hover .gallery-item-mask {
+	opacity: 1;
+}
+
+.gallery-item-mask button:hover {
+	background: white;
+	color: black;
+}
+
+/* 이미지 섹션 끝 */
+/* 안내 섹션 시작 */
+
+.guide {
+	width: 100%;
+	height: 900px;
+	background: url("../images/background.jpg") center 8% / cover fixed;
+}
+.guide-mask {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .5);
+}
+
+.guide-title {
+	padding: 70px 240px;
+	margin-bottom: 20px;
+}
+.guide-title p:nth-child(1) {
+	color: rgb(135, 206, 250);
+	font-size: 18.5px;
+	margin-bottom: 10px;
+	font-family: "NanumSquareR";
+}
+.guide-title p:nth-child(2) {
+	color: white;
+	font-size: 40px;
+	font-family: "NanumSquareB";
+}
+
+.guide-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 240px;
+	font-family: "NanumSquareL";
+}
+
+.guide-select {
+	position: relative;
+	height: 540px;
+	color: white;
+	padding-right: 10px;
+	overflow-y: scroll;
+}
+.guide-select::-webkit-scrollbar {
+	width: 10px;
+}
+.guide-select::-webkit-scrollbar-track {
+	background: transparent;
+}
+.guide-select::-webkit-scrollbar-thumb {
+	width: 10px;
+	border-radius: 50px;
+	background: #888888;
+}
+.guide-select::-webkit-scrollbar-thumb:hover {
+	background: #7a777a;
+}
+.guide-select::-webkit-scrollbar-thumb:active {
+	background: #59535d;	
+}
+
+.guide-select-btn,
+.guide-select div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 650px;
+	height: 150px;
+	margin-bottom: 20px;
+	background: rgba(0, 0, 0, .5);
+	font-size: 31px;
+	border-radius: 5px;
+	transition: .5s all;
+	cursor: pointer;
+}
+.guide-select div { 
+	position: absolute;
+	top: 0;
+	background: transparent;
+	border: 3px solid white;
+}
+
+
+#guide1:checked ~ .content .guide-select div { 
+	top: 0; 
+}
+#guide2:checked ~ .content .guide-select div { 
+	top: 170px; 
+}
+#guide3:checked ~ .content .guide-select div { 
+	top: 340px; 
+}
+#guide4:checked ~ .content .guide-select div { 
+	top: 510px; 
+}
+#guide5:checked ~ .content .guide-select div { 
+	top: 680px; 
+}
+#guide6:checked ~ .content .guide-select div { 
+	top: 850px; 
+}
+
+.guide-info-title-sec {
+	position: relative;
+	width: 650px;
+	height: 18%;
+	background: rgb(30, 144, 255);
+	color: white;
+	font-size: 30px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.guide-info-title {
+	position: absolute;
+	top: 30px;
+	left: 50px;
+	opacity: 0;
+}
+
+#guide1:checked ~ .content .guide-info .guide-info-title1,
+#guide2:checked ~ .content .guide-info .guide-info-title2,
+#guide3:checked ~ .content .guide-info .guide-info-title3,
+#guide4:checked ~ .content .guide-info .guide-info-title4,
+#guide5:checked ~ .content .guide-info .guide-info-title5,
+#guide6:checked ~ .content .guide-info .guide-info-title6 {
+	transition: .5s ease;
+	opacity: 1;
+}
+
+.guide-cont-sec {
+	position: relative;
+	width: 650px;
+	height: 82%;
+	padding: 35px 50px;
+	background: rgb(239, 250, 251);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.guide-cont-route {
+	display: flex;
+	position: absolute;
+	width: 625px;
+	top: 35px;
+	left: 50px;
+	opacity: 0;
+	font-size: 20px;
+	font-family: "NanumSquareR";
+}
+.guide-cont-route {
+	flex-wrap: wrap;
+	margin-left: -20px;
+}
+.guide-cont-route li {
+	position: relative;
+	margin-right: 15px;
+	padding-left: 25px;
+	margin-bottom: 25px;
+}
+.guide-cont-route li:not(:first-child):after {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	display: block;
+	width: 10px;
+	height: 1px;
+	content: "";
+	background: black;
+}
+
+.guide-cont-time {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 13%;
+	opacity: 0;
+}
+.guide-cont-time span:nth-child(1) {
+	margin-right: 40px;
+}
+
+#guide1:checked ~ .content .guide-info .guide-cont-sec .guide-cont-route1,
+#guide2:checked ~ .content .guide-info .guide-cont-sec .guide-cont-route2,
+#guide3:checked ~ .content .guide-info .guide-cont-sec .guide-cont-route3,
+#guide4:checked ~ .content .guide-info .guide-cont-sec .guide-cont-route4,
+#guide5:checked ~ .content .guide-info .guide-cont-sec .guide-cont-route5,
+#guide6:checked ~ .content .guide-info .guide-cont-sec .guide-cont-route6,
+
+#guide1:checked ~ .content .guide-info .guide-cont-sec .guide-cont-time1,
+#guide2:checked ~ .content .guide-info .guide-cont-sec .guide-cont-time2,
+#guide3:checked ~ .content .guide-info .guide-cont-sec .guide-cont-time3,
+#guide4:checked ~ .content .guide-info .guide-cont-sec .guide-cont-time4,
+#guide5:checked ~ .content .guide-info .guide-cont-sec .guide-cont-time5,
+#guide6:checked ~ .content .guide-info .guide-cont-sec .guide-cont-time6 {
+	transition: .5s ease;
+	opacity: 1;
+}
+
+
+/* footer 섹션 시작 */
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 300px;
+	font-family: "NanumSquareL";
+}
+
+.foot-question {
+	padding-left: 230px;
+	padding-top: 60px;
+	width: 49.5%;
+	background: #f2f4f8;
+}
+.foot-question p {
+	font-size: 30px;
+	font-family: "NanumSquareR";
+}
+.foot-question-item {
+	position: relative;
+	width: 500px;
+}
+.foot-question input {
+	width: 500px;
+	height: 30px;
+	margin-top: 20px;
+	padding-left: 10px;
+	background: transparent;
+	font-size: 24px;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid black;
+	font-family: "NanumSquareL";
+}
+
+.line {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	z-index: 10;
+	width: 0;
+	height: 5px;
+	margin-top: -3px;
+	background: #8eccf2;
+	transition: .5s ease;
+}
+
+.foot-question div:nth-child(1) {
+	display: flex;
+	justify-content: center;
+}
+.foot-question input:focus + .line {
+	width: 500px;
+}
+
+.foot-copy {
+	width: 50.5%;
+	padding: 110px 70px;
+	background: rgb(61, 61, 61);
+}
+.foot-copy > div {
+	width: 570px;
+	text-align: center;
+}
+
+.foot-sns {
+	margin-bottom: 15px;
+}
+
+.copy {
+	color: white;
+	font-size: 14.5px;
+}
+
+/* footer 섹션 끝 */
